@@ -11,11 +11,12 @@ import lombok.experimental.Accessors;
  */
 @Data
 @ToString
-@Accessors(fluent = true, prefix = "test")
+//, prefix = "test"
+@Accessors(fluent = true)
 public class Person {
-//    private String firstName;
-//    private String lastName;
-    private String testFirstName;
+    private String firstName;
+    private String lastName;
+//    private String testFirstName;
 
     public static void main(String[] args) {
         Person p = new Person();
