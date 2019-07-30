@@ -1,6 +1,7 @@
-package com.tony.batch;
+package com.tony.batch.domain;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
@@ -13,6 +14,7 @@ import lombok.experimental.Accessors;
 @ToString
 //, prefix = "test"
 @Accessors(fluent = true)
+@NoArgsConstructor
 public class Person {
     private String firstName;
     private String lastName;
