@@ -1,4 +1,4 @@
-package com.tony.batch.test.dto;
+package com.tony.spring.dto.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,4 +19,5 @@ public class StudentVO {
     private String name;
     private Integer age;
     private String mobile;
+    private String addr;
 }
