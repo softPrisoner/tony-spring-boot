@@ -33,4 +33,9 @@ public class DozerConfig {
             }
         };
     }
+
+    //TODO 尝试部分属性转换
+    public void testSpecialConfig() {
+
+    }
 }
