@@ -6,9 +6,6 @@ import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.FlatFileItemWriter;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
@@ -54,20 +51,20 @@ public class HelloWordJobConfig {
                 //flatFileItemWriterBuilder
                 .name("greetingItemWriter")
                 //输出目标资源
-                .resource(new FileSystemResource("target/test-outputs/grettings.txt"))
+                .resource(new FileSystemResource("output/batch-result.txt"))
                 //聚合行
                 .lineAggregator(new PassThroughLineAggregator<>()).build();
     }
 
     public FlatFileItemReader<? extends Person> reader() {
-        //可以看出来这里使用的是文件的对象刘
+        //可以看出来这里使用的是文件的对象流
         return new FlatFileItemReaderBuilder<Person>()
                 //命名
                 .name("personItemReader")
                 //设置资源文件csv
-                .resource(new ClassPathResource("csv/persons.csv"))
-                //使用分隔符,分割数据
-                .delimited()
+                .resource(new ClassPathResource("persons.csv"))
+                //使用分隔符,分割数据,默认是逗号,可以自己配置
+                .delimited().delimiter(",")
                 //命名映射
                 .names(new String[]{"firstName", "lastName"})
                 //生成目标类型
