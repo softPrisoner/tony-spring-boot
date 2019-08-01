@@ -18,8 +18,24 @@ import lombok.experimental.Accessors;
 public class Person {
     private String firstName;
     private String lastName;
-//    private String testFirstName;
+//必须显式声明get,set方法.非编译后处理
+    public String getFirstName() {
+        return firstName;
+    }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    //    private String testFirstName;
     public static void main(String[] args) {
         Person p = new Person();
 //        p.firstName("testPeter").lastName("testSmith");
