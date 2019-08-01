@@ -1,4 +1,4 @@
-package com.tony.batch.test.dto.config;
+package com.tony.spring.dto.config;
 
 import org.dozer.DozerBeanMapperBuilder;
 import org.dozer.Mapper;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2019-08-01
  */
 @Configuration
-public class DozerConfig {
+public class DozerConfig{   就
     public Mapper dozerMapper() {
         //指定dozer mapping的配置文件(放到resources类路径下即可),可以添加多个xml文件,用逗号隔开\
         return DozerBeanMapperBuilder.create()
