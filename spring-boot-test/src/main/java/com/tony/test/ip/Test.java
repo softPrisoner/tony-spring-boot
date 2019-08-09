@@ -7,7 +7,7 @@ package com.tony.test.ip;
  */
 public class Test {
     public static void main(String[] args) {
-        System.out.println(IPConveter.IP2Long("192.168.4.1"));
-        System.out.println(IPConveter.Long2IP(3232246645L));
+        System.out.println(IPConverter.IP2Long("192.168.4.1"));
+        System.out.println(IPConverter.Long2IP(3232246645L));
     }
 }
