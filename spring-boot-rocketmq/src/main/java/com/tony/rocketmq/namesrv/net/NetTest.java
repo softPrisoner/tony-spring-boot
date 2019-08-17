@@ -28,6 +28,8 @@ public class NetTest {
                         ipv6Result.add(inetAddress.getHostAddress());
                         System.out.println(normalizeHostAddress(inetAddress));
                     }
+                    // fetch host name [user]
+                    System.out.println(inetAddress.getHostName());
                 }
 //                }
             }
