@@ -19,7 +19,7 @@ public class SyncConsumer {
         consumer.registerMessageListener((MessageListenerConcurrently)
                 (messages, consumeConcurrentlyContext) -> {
                     for (MessageExt message : messages) {
-                        //打印消息
+                        //print info
                         System.out.println(message.toString());
                     }
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
