@@ -1,8 +1,8 @@
 package com.tony.rocketmq.namesrv.consumer;
 
 import com.alibaba.rocketmq.client.consumer.DefaultMQPushConsumer;
-import com.alibaba.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
-import com.alibaba.rocketmq.client.consumer.listener.MessageListenerConcurrently;
+import com.alibaba.rocketmq.client.consumer.listener.ConsumeOrderlyStatus;
+import com.alibaba.rocketmq.client.consumer.listener.MessageListenerOrderly;
 import com.alibaba.rocketmq.client.exception.MQClientException;
 import com.alibaba.rocketmq.common.message.MessageExt;
 
@@ -16,14 +16,23 @@ public class SyncConsumer {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("order-group");
         consumer.setNamesrvAddr("localhost:9876");
         consumer.subscribe("orderTopic", "*");
-        consumer.registerMessageListener((MessageListenerConcurrently)
-                (messages, consumeConcurrentlyContext) -> {
+//        consumer.registerMessageListener((MessageListenerConcurrently)
+//                (messages, consumeConcurrentlyContext) -> {
+//                    for (MessageExt message : messages) {
+//                        //print info
+//                        System.out.println(message.toString());
+//                    }
+//                    return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+//                });
+        consumer.registerMessageListener(
+                (MessageListenerOrderly) (messages, consumeOrderlyContext) -> {
                     for (MessageExt message : messages) {
-                        //print info
                         System.out.println(message.toString());
                     }
-                    return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+                    return ConsumeOrderlyStatus.SUCCESS;
                 });
+        //console 可能使用这个api
+//        consumer.queryMessage()
         consumer.start();
     }
 }
