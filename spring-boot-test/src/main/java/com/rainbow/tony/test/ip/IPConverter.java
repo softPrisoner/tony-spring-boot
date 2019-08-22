@@ -1,4 +1,4 @@
-package com.tony.test.ip;
+package com.rainbow.tony.test.ip;
 
 import java.util.StringTokenizer;
 
@@ -35,5 +35,9 @@ public class IPConverter {
         return sb.toString();
     }
 
+    public static void main(String[] args) {
+        System.out.println(IPConverter.IP2Long("192.168.4.1"));
+        System.out.println(IPConverter.Long2IP(3232246645L));
+    }
 
 }
