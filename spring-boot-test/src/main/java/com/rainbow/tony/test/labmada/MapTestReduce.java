@@ -7,7 +7,7 @@ import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 public class MapTestReduce {
-    static List<Integer> costBeforeTax = Arrays.asList(100, 200, 300, 400);
+    private static List<Integer> costBeforeTax = Arrays.asList(100, 200, 300, 400);
 
     public static void main(String[] args) {
 //		Reduce();
