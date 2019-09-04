@@ -6,6 +6,7 @@ package com.tony.rocketmq.namesrv.common;
  * @date 2019-08-19
  */
 public class OrderGroupConstant {
+    public static final String ORDER_TAG = "TAG-ORDER";
     public static final String ORDER_GROUP = "ORDER-GROUP";
     public static final String NAME_ADDR = "localhost:9876";
 }
