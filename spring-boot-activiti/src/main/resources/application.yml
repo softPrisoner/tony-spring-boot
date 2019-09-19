@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      enabled: true
+      max-request-size: 20
+      resolve-lazily: true
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+  security:
+    user:
+      password: 123456
+      name: user
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8
