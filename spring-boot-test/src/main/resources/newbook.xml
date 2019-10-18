@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore>
+    <book id="1">
+        <name>围城</name>
+        <author>钱钟书</author>
+        <publisher>中国工业出版社</publisher>
+        <price>56.8</price>
+    </book>
+    <book id="2">
+        <name>冰山</name>
+        <author>未知</author>
+        <publisher>清华出版社</publisher>
+        <price>45.6</price>
+    </book>
+</bookstore>
