@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- 约束 -->
+<!--
+#xmlns="http://www.w3.org/2001/XMLSchema"
+#targetNamespace: 用于别人访问，类似于mybatis的命名空间 
+#elementFormDefault="qualified"
+1、在xml中，所有引用xsd的全局的元素都必须加上命名空间的前缀
+（例如xmlns:aa=http://www.example.org/classroom，全局元素都得加上aa）。
+2、非全局的元素当设置为qualified时，必须添加命名空间的前缀。
+3、非全局的元素当设置为unqualified时，不必也不能添加前缀。
+-->
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+
+        targetNamespace="http://www.atguigu.com/bookSchema"
+        elementFormDefault="qualified">
+    <element name="书架">
+        <complexType>
+            <sequence maxOccurs="unbounded">
+                <element name="书">
+                    <complexType>
+                        <sequence>
+                            <element name="书名" type="string"/>
+                            <element name="作者" type="string"/>
+                            <element name="售价" type="string"/>
+                        </sequence>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>

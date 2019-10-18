@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<书架 xmlns:dd="http://www.w3.org/2001/XMLSchema"
+    xmlns="http://www.atguigu.com/bookSchema"
+    dd:schemaLocation="http://www.http.org/NewXMLSchema book.xsd">
+    <书>
+        <书名>WEB Service</书名>
+        <作者>tony</作者>
+        <售价>16</售价>
+    </书>
+</书架>
