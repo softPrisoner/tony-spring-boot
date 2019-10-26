@@ -3,8 +3,10 @@ package com.tony.spring.dto.pojo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,8 +17,10 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Accessors(fluent = true)
-public class StudentDO {
+@Accessors(chain = true)
+@ToString
+public class StudentDO implements Serializable {
+    private static final long serialVersionUID = 7821398898144192688L;
     private Long id;
     private int sex;
     private String name;
