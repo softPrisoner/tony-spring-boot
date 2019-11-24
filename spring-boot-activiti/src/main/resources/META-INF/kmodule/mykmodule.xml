@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+    <kbase name="transactionKbase" packages="com.rainbow.tony.activiti.model.TransactionModel">
+        <ksession name="orderSession" type="stateful" default="true" beliefSystem="simple">
+            <listeners>
+                <agendaEventListener type="com.rainbow.tony.activiti.listener.TransactionAgendaEventListener"/>
+            </listeners>
+        </ksession>
+    </kbase>
+</kmodule>

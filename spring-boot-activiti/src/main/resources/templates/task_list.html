@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!--框架必需start-->
+<script type="text/javascript" src="/libs/js/jquery.js"></script>
+<script type="text/javascript" src="/libs/js/language/cn.js"></script>
+<script type="text/javascript" src="/libs/js/framework.js"></script>
+<link href="/libs/css/import_basic.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" id="skin" prePath="../../"/>
+<link rel="stylesheet" type="text/css" id="customSkin"/>
+<!--框架必需end-->
+<!-- 日期选择框start -->
+<script type="text/javascript" src="/libs/js/form/datePicker/WdatePicker.js"></script>
+<!-- 日期选择框end -->
+<!--多视图切换start-->
+<script type='text/javascript' src="/libs/js/other/scrollTo.js"></script>
+<script type='text/javascript' src="/libs/js/other/localscroll.js"></script>
+<script>
+    function initComplete() {
+        $(".nav_single_h li").click(function () {
+            $(".nav_single_h li").removeClass("current");
+            $(this).addClass("current");
+        });
+
+        $.localScroll.defaults.axis = 'xy';
+        $.localScroll.hash({
+            target: '#content',
+            queue: true,
+            duration: 1500
+        });
+        $.localScroll({
+            target: '#content',
+            queue: true,
+            duration: 500,
+            hash: true,
+            onBefore: function (e, anchor, $target) {
+            },
+            onAfter: function (anchor, settings) {
+            }
+        });
+    }
+
+    function customHeightSet(contentHeight, contentWidth) {
+        $("#content").height(contentHeight - 50)
+        $(".con").width(contentWidth)
+        $(".con").height(contentHeight - 50)
+    }
+</script>
+<style>
+    #content {
+        overflow: hidden;
+        background-color: white;
+        position: relative;
+        width: 100%;
+    }
+
+    .section {
+        width: 99999px;
+        position: relative;
+    }
+
+    .section .con {
+        float: left;
+        position: relative;
+        overflow-y: auto;
+    }
+
+</style>
+<!--多视图切换end-->
+<body>
+<div class="nav_single_h">
+    <ul>
+        <li class="current"><a href="#section1">项目1</a></li>
+        <li><a href="#section2">待审批任务</a></li>
+        <div class="clear"></div>
+    </ul>
+</div>
+
+
+<div id="content">
+    <div class="section">
+        <div class="con" id="section1">
+            <div class="groupTitle"><span>代办任务</span></div>
+            <table class="tableStyle" mode="list">
+                <tr>
+                    <th style="width: 80px">任务序号</th>
+                    <th>任务名称</th>
+                    <th>任务描述</th>
+                    <th style="width: 30px">任务签发者</th>
+                    <th style="width: 50px">任务截止日期</th>
+                    <th style="width: 300px">操作</th>
+                    <th>备注信息</th>
+                </tr>
+                <tr>
+                    <td>task:11:1</td>
+                    <td>请假处理</td>
+                    <td>张小三想请个假</td>
+                    <td>张小三</td>
+                    <td>2019-01-01</td>
+                    <td>
+                        <div style=" text-align:center;float: left;display: block;width:100px; margin-left:15px;margin-right:15px;background-color: #00ccff ">
+                            <a href="#">审批通过</a></div>
+                        <div style="text-align:center;float: left; width:100px;display: block;margin-left:15px;margin-right:20px;background-color: #dff378">
+                            <a href="#">退回</a></div>
+                    </td>
+                    <td>我生病了</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

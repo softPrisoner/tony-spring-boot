@@ -1,0 +1,26 @@
+package com.rainbow;
+import com.rainbow.tony.activiti.model.TransactionModel
+import java.util.Date
+global   java.lang.Integer count
+dialect  "java"
+rule "ruleNo1"
+salience 100 #设置优先级
+lock-on-active #锁状态激活
+no-loop #无循环
+    when
+    $currentTime:Date();
+    $w:TransactionModel($createTime:createTime,$balance:balance);
+    then
+    count++;
+    if ($createTime.getTime()<($currentTime.getTime()-1000*60*60*24*7)){
+                count++;
+                System.out.println("时间已经过期,不进行任何处理");
+   }else{
+        if (count==5){
+            System.out.println("异常已经超过5个了请及时处理");
+        }
+        System.out.println("记录交易记录进入数据库");
+   }
+    //当创建时间小于
+
+end

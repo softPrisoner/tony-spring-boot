@@ -14,7 +14,55 @@
         <version>2.1.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <properties>
+        <lombok.version>1.18.6</lombok.version>
+        <fastjson.version>1.2.51</fastjson.version>
+        <druid.version>1.0.18</druid.version>
+        <guava.version>20.0</guava.version>
+    </properties>
     <modules>
         <module>spring-boot-batch</module>
+        <module>spring-boot-security</module>
+        <module>spring-boot-dto</module>
+        <module>spring-boot-transaction</module>
+        <module>spring-boot-test</module>
+        <module>spring-boot-rocketmq</module>
+        <module>spring-boot-shiro</module>
+        <module>spring-boot-common</module>
+        <module>spring-boot-activiti</module>
+        <module>spring-boot-statemachine</module>
+        <module>spring-boot-shardingjdbc</module>
+        <module>spring-boot-lucene</module>
+        <module>spring-boot-conditional</module>
+        <module>spring-boot-netflix-hystrix</module>
+        <module>spring-boot-design-pattern</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+        <!-- groovy支持-->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+    </dependencies>
 </project>

@@ -17,10 +17,9 @@ public enum AuditStateEnums {
 
     STATE_APPROVING(8, "审批中"),
 
-
     STATE_APPROVED(16, "已审批"),
 
-    STATE_DISMISSED(17, "已驳回");
+    STATE_DISMISSED(32, "已驳回");
 
     public int status;
     public String description;

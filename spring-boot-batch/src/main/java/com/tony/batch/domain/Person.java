@@ -12,13 +12,14 @@ import lombok.experimental.Accessors;
  */
 @Data
 @ToString
-//, prefix = "test"
+// prefix = "test"
 @Accessors(fluent = true)
 @NoArgsConstructor
 public class Person {
     private String firstName;
     private String lastName;
-//必须显式声明get,set方法.非编译后处理
+
+    //必须显式声明get,set方法.非编译后处理
     public String getFirstName() {
         return firstName;
     }
