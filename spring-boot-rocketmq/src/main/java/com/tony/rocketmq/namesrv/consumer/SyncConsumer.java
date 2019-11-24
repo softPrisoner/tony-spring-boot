@@ -31,7 +31,7 @@ public class SyncConsumer {
                     }
                     return ConsumeOrderlyStatus.SUCCESS;
                 });
-        //console 可能使用这个api
+        //console 肯定使用这个api
 //        consumer.queryMessage()
         consumer.start();
     }
