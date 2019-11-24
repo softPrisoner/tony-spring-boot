@@ -3,6 +3,7 @@ package com.rainbow.tony.shiro.controller;
 
 import com.rainbow.tony.common.response.PlainResult;
 import com.rainbow.tony.shiro.service.AccountService;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,5 +23,11 @@ public class ShiroAccountController {
     @PostMapping("/login")
     public PlainResult<String> login(@RequestParam("username") String username, @RequestParam("password") String password) {
         return userService.accountLogin(username, password);
+    }
+
+    //test shiro api
+    @RequiresRoles("admin")
+    public void loginWithPrivate() {
+        System.out.println("welcome admin");
     }
 }

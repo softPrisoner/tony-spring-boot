@@ -1,0 +1,17 @@
+server:
+  port: 8087
+
+spring:
+  mvc:
+    view:
+      prefix: /test
+      suffix: .htm
+  thymeleaf:
+    servlet:
+      content-type: text/htmluser
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/shiro?userSSL=false
+    username: root
+    password: 123456
+

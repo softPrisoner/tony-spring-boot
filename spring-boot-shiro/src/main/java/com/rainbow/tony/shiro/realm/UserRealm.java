@@ -24,9 +24,10 @@ public class UserRealm implements Realm {
         String password = new String((char[]) token.getCredentials());
         AccountLoginDO accountLoginDO = new AccountLoginDO();
         accountLoginDO.setUsername(username).setPassword(password);
-        if (!username.equals("zhangsan") || !password.equals("123")) {
+        if (!username.equals("zhang") || !password.equals("123")) {
             throw new AuthenticationException("auth failed username:{}");
         }
         return new SimpleAuthenticationInfo(username, password, getName());
     }
+
 }
