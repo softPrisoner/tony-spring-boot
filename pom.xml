@@ -36,6 +36,9 @@
         <module>spring-boot-conditional</module>
         <module>spring-boot-netflix-hystrix</module>
         <module>spring-boot-design-pattern</module>
+        <module>spring-boot-kotlin</module>
+        <module>spring-boot-mongo-aggr</module>
+        <module>spring-boot-auto-properties</module>
     </modules>
     <dependencies>
         <dependency>
