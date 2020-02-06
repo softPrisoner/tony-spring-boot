@@ -1,0 +1,40 @@
+{
+  "groups": [
+    {
+      "name": "com.tony",
+      "type": "com.tony.properties.config.TonyProperties",
+      "sourceType": "com.tony.properties.config.TonyProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.tony.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.tony.properties.config.TonyProperties"
+    },
+    {
+      "name": "com.tony.address",
+      "type": "java.lang.String",
+      "sourceType": "com.tony.properties.config.TonyProperties"
+    }
+  ],
+  "hints": [
+    {
+      "name": "com.tony.port",
+      "values": [
+        {
+          "value": 8080,
+          "description": "Development Environment"
+        },
+        {
+          "value": 8081,
+          "description": "Test Environment"
+        },
+        {
+          "value": 8082,
+          "description": "Product Environment."
+        }
+      ]
+    }
+  ]
+}
