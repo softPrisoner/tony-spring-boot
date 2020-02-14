@@ -39,6 +39,7 @@
         <module>spring-boot-kotlin</module>
         <module>spring-boot-mongo-aggr</module>
         <module>spring-boot-auto-properties</module>
+        <module>tony-spring-boot-jpa</module>
     </modules>
     <dependencies>
         <dependency>
