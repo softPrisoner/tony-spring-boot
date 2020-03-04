@@ -14,6 +14,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
+ * 基础类型对象
+ *
  * @author tony
  * @describe BaseEntity
  * @date 2020/02/14
@@ -25,7 +27,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 @MappedSuperclass
 @EntityListeners({AuditingEntityListener.class, MyEntityListener.class})
-abstract class BaseEntity implements Serializable {
+public abstract class BaseEntity implements Serializable {
     /**
      * 公共主键
      * GenerationType.IDENTITY 主键由数据库自动生成（主要是自动增长型）
