@@ -1,7 +1,6 @@
 package com.tony.java8.stream.iterator;
 
 import com.tony.java8.stream.Dish;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +13,6 @@ import java.util.stream.Collectors;
  * @copyright rainbow
  * @date 2020/03/24
  */
-@Slf4j
 public class IteratorTest {
     public static void main(String[] args) {
         List<Dish> menu = Arrays.asList(new Dish("pork", false, 800, Dish.Type.MEAT),
