@@ -17,6 +17,17 @@ public class Dish {
     private final int calories;
     private final Type type;
 
+    //
+
+    /**
+     * To support the stream auto
+     * @return Dish name
+     */
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
     public enum Type {
         /**
          * MEAT
