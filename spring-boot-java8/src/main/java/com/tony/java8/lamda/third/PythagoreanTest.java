@@ -43,7 +43,8 @@ public class PythagoreanTest {
 
         //First,Create the Integer stream
         Stream<Integer> boxedIntegerStream0 = IntStream.rangeClosed(1, 100).boxed();
-        Stream<Integer> boxedIntegerStream = IntStream.rangeClosed(1, 100).boxed();
+        Stream<Integer> boxedIntegerStream1 = IntStream.rangeClosed(1, 100).boxed();
+        Stream<Integer> boxedIntegerStream2 = IntStream.rangeClosed(1, 100).boxed();
         Stream<int[]> stream0 = boxedIntegerStream0
                 .flatMap(a -> IntStream.rangeClosed(a, 100)
                         .filter(b -> Math.sqrt(a * a + b * b) % 1 == 0)
@@ -52,12 +53,22 @@ public class PythagoreanTest {
                         .map(b -> new int[]{a, b, (int) Math.sqrt(a * a + b * b)}));
         stream0.forEach(t -> System.out.println(t[0] + ", " + t[1] + ", " + t[2]));
         System.out.println("----------------------------------------------------------------------------");
-        Stream<int[]> stream = boxedIntegerStream
+        Stream<int[]> stream = boxedIntegerStream1
                 .flatMap(a -> IntStream.rangeClosed(a, 100)
                         .filter(b -> Math.sqrt(a * a + b * b) % 1 == 0)
                         //Boxed at the different time
                         .mapToObj(b -> new int[]{a, b, (int) Math.sqrt(a * a + b * b)}));
 
         stream.forEach(t -> System.out.println(t[0] + ", " + t[1] + ", " + t[2]));
+
+        System.out.println("----------------------------------------------------------------------------");
+        //Double type
+        Stream<double[]> stream2 = boxedIntegerStream2
+                .flatMap(
+                        a -> IntStream.rangeClosed(a, 100).mapToObj(
+                                b -> new double[]{a, b, (double) Math.sqrt(a * a + b * b)})
+                                .filter(t -> t[2] % 1 == 0)
+                );
+        stream2.forEach(t -> System.out.println(t[0] + ", " + t[1] + ", " + t[2]));
     }
 }
