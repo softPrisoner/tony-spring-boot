@@ -1,13 +1,12 @@
 package com.tony.java8.stream;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.OptionalInt;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 import static java.util.Comparator.comparing;
+import static java.util.stream.Collectors.*;
 
 /**
  * @author tony
@@ -52,5 +51,38 @@ public class DishTest {
                 .filter(n -> n % 2 == 0);
         //range does't contain the value close.
         System.out.println(rangeIntStream.count());
+
+        Map<Dish.Type, Set<String>> mapSet0 = menu.stream().collect(groupingBy(Dish::getType, mapping(dish -> {
+            if (dish.getCalories() < 400) {
+                return "DIET";
+            } else if (dish.getCalories() < 700) {
+                return "NORMAL";
+            } else {
+                return "FAT";
+            }
+        }, toSet())));
+        System.out.println("mapSet0->" + mapSet0);
+
+        Map<Dish.Type, HashSet<String>> mapSet = menu.stream().collect(groupingBy(Dish::getType, mapping(dish -> {
+            if (dish.getCalories() < 400) {
+                return "DEAT";
+            } else if (dish.getCalories() < 700) {
+                return "NORMAL";
+            } else {
+                return "FAT";
+            }
+        }, toCollection(HashSet::new))));
+
+        System.out.println(mapSet);
+        //PartitionBy which must return the boolean value.
+        Map<Boolean, List<Dish>> partitionedMenu = menu.stream().collect(partitioningBy(Dish::isVegetarian));
+        List<Dish> vegetarianDishes = partitionedMenu.get(true);
+        System.out.println(vegetarianDishes);
+
+        //partitionBy then group by
+        Map<Boolean, Map<Dish.Type, List<Dish>>> booleanMapMap = menu.stream()
+                .collect(partitioningBy(Dish::isVegetarian, groupingBy(Dish::getType)));
+        System.out.println(booleanMapMap);
+
     }
 }
