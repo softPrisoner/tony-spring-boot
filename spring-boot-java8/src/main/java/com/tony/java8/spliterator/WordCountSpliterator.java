@@ -52,7 +52,8 @@ public class WordCountSpliterator implements Spliterator<Character> {
             return null;
         }
 
-        for (int splitPos = currentSize / SPLIT_UNIT + currentChar; splitPos < string.length(); splitPos++) {
+        for (int splitPos = currentSize / SPLIT_UNIT + currentChar;
+             splitPos < string.length(); splitPos++) {
             if (Character.isWhitespace(string.charAt(splitPos))) {
                 Spliterator<Character> spliterator = new WordCountSpliterator(
                         string.substring(currentChar, splitPos));
@@ -74,6 +75,12 @@ public class WordCountSpliterator implements Spliterator<Character> {
         return string.length() - currentChar;
     }
 
+    @Override
+    public int characteristics() {
+        //16+64+16384+256+1024
+        //0x00004550
+        return ORDERED + SIZED + SUBSIZED + NONNULL + IMMUTABLE;
+    }
     /**
      * Get the exact size
      *
@@ -84,10 +91,6 @@ public class WordCountSpliterator implements Spliterator<Character> {
         return 0;
     }
 
-    @Override
-    public int characteristics() {
-        return ORDERED + SIZED + SUBSIZED + NONNULL + IMMUTABLE;
-    }
 
     @Override
     public boolean hasCharacteristics(int characteristics) {
